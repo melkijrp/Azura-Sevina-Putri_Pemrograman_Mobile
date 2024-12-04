@@ -1,0 +1,80 @@
+import 'package:flutter/material.dart';
+import 'dart:async';
+
+void main() {
+  runApp(const MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return const MaterialApp(
+      home: Splash(),
+      debugShowCheckedModeBanner: false,
+    );
+  }
+}
+
+class Splash extends StatefulWidget {
+  const Splash({super.key});
+
+  @override
+  _SplashState createState() => _SplashState();
+}
+
+class _SplashState extends State<Splash> {
+  @override
+  void initState() {
+    super.initState();
+
+    // Menunggu beberapa detik sebelum pindah ke halaman berikutnya
+    Timer(const Duration(seconds: 3), () {
+      // Navigasi ke halaman login atau halaman lain jika perlu
+      // Ganti dengan halaman login atau landing page yang diinginkan
+      // Navigator.pushReplacement(
+      //     context, MaterialPageRoute(builder: (context) => LoginPage()));
+    });
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: Container(
+        width: double.infinity,
+        height: double.infinity,
+        color: Colors.pink, // Latar belakang berwarna pink
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            // Menambahkan sedikit space antara elemen
+            const Icon(
+              Icons.favorite,
+              size: 80,
+              color: Colors.white,
+            ),
+            const SizedBox(height: 20),
+            const Text(
+              'Azura Sevina Putri',
+              style: TextStyle(
+                fontSize: 20,
+                fontWeight: FontWeight.bold,
+                color: Colors.white,
+              ),
+            ),
+            const SizedBox(height: 10), // Jarak sedikit lebih rapat
+            const Text(
+              '221402013',
+              style: TextStyle(
+                fontSize: 18,
+                fontWeight: FontWeight.bold,
+                color: Colors.white,
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
